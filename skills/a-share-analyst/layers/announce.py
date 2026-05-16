@@ -1,5 +1,7 @@
-"""公告层：巨潮资讯网 + mootdx 公告 (akshare)"""
+"""公告层：巨潮资讯网 + mootdx 公告 (akshare) v1.2"""
 from datetime import datetime, timedelta
+import logging
+logger = logging.getLogger("a-share-announce")
 
 
 class Announcements:

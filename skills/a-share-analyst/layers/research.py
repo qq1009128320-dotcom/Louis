@@ -1,5 +1,7 @@
-"""研报层：东方财富机构研报 (akshare)"""
+"""研报层：东方财富机构研报 (akshare) v1.2"""
 from datetime import datetime
+import logging
+logger = logging.getLogger("a-share-research")
 
 
 class ResearchReports:
@@ -30,10 +32,10 @@ class ResearchReports:
                 })
             return reports
         except ImportError:
-            print("[研报层] akshare 未安装")
+            logger.debug("研报: akshare not available")
             return []
         except Exception as e:
-            print(f"[研报层] 查询失败: {e}")
+            logger.warning(f"研报({symbol}): {type(e).__name__}: {e}")
             return []
     
     def print_reports(self, reports):
